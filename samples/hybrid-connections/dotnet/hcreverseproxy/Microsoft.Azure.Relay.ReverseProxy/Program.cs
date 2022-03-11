@@ -31,9 +31,12 @@ namespace Microsoft.Azure.Relay.ReverseProxy
             var hybridProxy = new HybridConnectionReverseProxy(connectionString, targetUri);
             await hybridProxy.OpenAsync(CancellationToken.None);
 
-            Console.ReadLine();
+            while(true){
+              await Task.Delay(500);
+            }
+            //Console.ReadLine();
 
-            await hybridProxy.CloseAsync(CancellationToken.None);
+           //await hybridProxy.CloseAsync(CancellationToken.None);
         }
     }
 }
